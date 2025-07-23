@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LernenApp</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- DARKMODE Voreinstellung (wird sofort gesetzt) -->
+  <script>
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-white font-inter transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 border-b border-gray-300 dark:border-gray-700">
+    <h1 class="text-2xl font-extrabold tracking-tight">🚀 LernenApp</h1>
+    <div class="flex items-center gap-4">
+      <button id="toggle-dark" class="text-2xl cursor-pointer">🌙</button>
+      <button class="px-4 py-2 rounded bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow hover:brightness-110 transition">
+        Anmelden
+      </button>
+    </div>
+  </header>
+
+  <!-- Hauptbereich -->
+  <main class="p-6 max-w-6xl mx-auto animate-fadein">
+    <h2 class="text-4xl font-bold mb-8 text-center">Was willst du heute lernen?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Programmieren -->
+      <a href="programmieren.html" class="p-6 rounded-2xl text-white shadow-lg transform transition hover:scale-105 hover:shadow-xl bg-gradient-to-r from-indigo-600 to-blue-500">
+        <h3 class="text-2xl font-bold mb-2">🧠 Programmieren</h3>
+        <p class="text-sm opacity-90">JavaScript, Python, Webentwicklung uvm.</p>
+      </a>
+
+      <!-- Sprachen -->
+      <a href="sprachen.html" class="p-6 rounded-2xl text-white shadow-lg transform transition hover:scale-105 hover:shadow-xl bg-gradient-to-r from-green-500 to-emerald-500">
+        <h3 class="text-2xl font-bold mb-2">🌍 Sprachen</h3>
+        <p class="text-sm opacity-90">Spanisch, Französisch, Arabisch usw.</p>
+      </a>
+
+      <!-- Bewerbung -->
+      <a href="bewerbung.html" class="p-6 rounded-2xl text-white shadow-lg transform transition hover:scale-105 hover:shadow-xl bg-gradient-to-r from-purple-500 to-pink-500">
+        <h3 class="text-2xl font-bold mb-2">💼 Bewerbung</h3>
+        <p class="text-sm opacity-90">STAR-Methode, Interviewfragen, Tipps</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
